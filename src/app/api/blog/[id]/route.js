@@ -4,7 +4,7 @@ import Blog from "@/models/Blog";
 
 export async function GET(req, { params }) {
     await connectDB();
-    const blog = await Blog.findById(params.id);
+    const blog = await Blog.findOne({ slug: params.id });
     return NextResponse.json(blog);
 }
 
