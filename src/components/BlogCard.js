@@ -1,14 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { DateFormat } from "@/lib/utility";
 
 export default function BlogCard({ blog }) {
-    const publishedDate = new Date(blog.createdAt || Date.now()).toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    });
-
+    const publishedDate = DateFormat(blog.createdAt)
     return (
         <Link href={`/blog/${blog.slug}`} className="border-t-1 border-neutral-200 pt-18 group/card flex flex-col md:flex-row gap-8">
             <div className="md:w-[45%]">
@@ -22,7 +18,7 @@ export default function BlogCard({ blog }) {
             </div>
 
             <div className="md:w-[55%] flex flex-col justify-between py-8">
-                <div className="text-xs uppercase font-medium tracking-wide mb-2">
+                <div className="text-xs uppercase font-medium tracking-widest mb-2">
                     <span className="text-amber-500">{blog.category}</span> &nbsp; • &nbsp; {publishedDate}
                 </div>
                 <h2 className="text-2xl font-medium">{blog.title}</h2>
