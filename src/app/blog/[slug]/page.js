@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { DateFormat } from "@/lib/utility";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ScrollTriggerInit from "@/components/ScrollTriggerInit";
+import BackToTop from "@/components/BackToTop";
 
 async function getBlog(slug) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${slug}`, {
@@ -31,12 +33,20 @@ export default async function BlogDetailPage(context) {
 
     return (
         <div>
-            <div className="container flex flex-col justify-center">
+            <BackToTop />
+            <ScrollTriggerInit />
+            <div className="container flex flex-col justify-center overflow-hidden">
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />
                 </div>
                 <h1 className="text-6xl font-medium text-center my-32">{blog.title}</h1>
-                <img src={blog.images?.[0] || "/placeholder.jpg"} alt={blog.title} className="object-cover" />
+                <img
+                    src={blog.images?.[0] || "/placeholder.jpg"}
+                    alt={blog.title}
+                    className="object-cover mil-scale"
+                    data-value1="0.8"
+                    data-value2="1.1"
+                />
                 <div className="flex justify-between py-12 border-b border-neutral-200">
                     <p className="uppercase text-neutral-500 tracking-widest text-sm">
                         category: <span className="text-black">{blog.category}</span>
