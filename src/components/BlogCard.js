@@ -6,7 +6,7 @@ import { DateFormat } from "@/lib/utility";
 export default function BlogCard({ blog }) {
     const publishedDate = DateFormat(blog.createdAt)
     return (
-        <Link href={`/blog/${blog.slug}`} className="border-t-1 border-neutral-200 pt-18 group/card flex flex-col md:flex-row gap-8">
+        <Link href={`/blog/${blog.slug}`} className="mil-more border-t-1 border-neutral-200 pt-18 group/card flex flex-col md:flex-row gap-8">
             <div className="md:w-[45%]">
                 <div className="w-full h-84 overflow-hidden">
                     <img

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <div>
-            <Link href="/blog">Blog</Link>
+        <div className="text-center my-32">
+            <Link className="mil-more" href="/blog">Blog</Link>
         </div>
     );
 }

@@ -1,77 +1,115 @@
-// "use client";
+"use client";
 
-// import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-// const CustomCursor = () => {
-//     const cursorRef = useRef(null);
-//     const mouse = useRef({ x: 0, y: 0 });
-//     const pos = useRef({ x: 0, y: 0 });
-//     const rafId = useRef(null);
-//     const scale = useRef(1);
+const CustomCursor = () => {
+    const cursorRef = useRef(null);
 
-//     useEffect(() => {
-//         if (typeof window === "undefined") return;
+    useEffect(() => {
+        const cursor = cursorRef.current;
+        if (!cursor) return;
 
-//         const updateVisibility = (show) => {
-//             if (cursorRef.current) {
-//                 cursorRef.current.style.opacity = show ? 0.8 : 0;
-//             }
-//         };
+        const textEl = cursor.querySelector(".cursor-text");
 
-//         const onMouseMove = ({ clientX, clientY }) => {
-//             mouse.current = { x: clientX, y: clientY };
-//             updateVisibility(true);
-//         };
+        // Center the cursor
+        gsap.set(cursor, {
+            xPercent: -50,
+            yPercent: -50,
+            backgroundColor: "#e5e5e5",
+            scale: 1,
+            opacity: 0.8,
+        });
 
-//         const onMouseDown = () => (scale.current = 0.7);
-//         const onMouseUp = () => (scale.current = 1);
-//         const onMouseEnter = () => updateVisibility(true);
-//         const onMouseLeave = () => updateVisibility(false);
+        // Follow the pointer
+        const onPointerMove = (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.35,
+                ease: "sine.out",
+            });
+        };
 
-//         const animate = () => {
-//             const dx = mouse.current.x - pos.current.x;
-//             const dy = mouse.current.y - pos.current.y;
+        // Click shrink
+        const onMouseDown = () => {
+            gsap.to(cursor, {
+                scale: 0.1,
+                duration: 0.1,
+                ease: "sine.out",
+            });
+        };
 
-//             pos.current.x += dx * 0.07;
-//             pos.current.y += dy * 0.07;
+        // Click release
+        const onMouseUp = () => {
+            gsap.to(cursor, {
+                scale: 1,
+                duration: 0.4,
+                ease: "elastic.out(1, 0.5)",
+            });
+        };
 
-//             if (cursorRef.current) {
-//                 cursorRef.current.style.transform = `translate3d(${pos.current.x - 10}px, ${pos.current.y - 10}px, 0) scale(${scale.current})`;
-//             }
+        const onMouseLeave = () =>
+            gsap.to(cursor, {
+                opacity: 0,
+                duration: 0.2,
+            });
 
-//             rafId.current = requestAnimationFrame(animate);
-//         };
+        // Hover effects
+        const interactiveSelectors = [".mil-more"];
+        const hideSelectors = ["a:not(.mil-more)", "input", "textarea"];
 
-//         document.addEventListener("mousemove", onMouseMove);
-//         document.addEventListener("mousedown", onMouseDown);
-//         document.addEventListener("mouseup", onMouseUp);
-//         window.addEventListener("mouseenter", onMouseEnter);
-//         window.addEventListener("mouseleave", onMouseLeave);
+        const handleInteractiveHover = (e) => {
+            if (interactiveSelectors.some((sel) => e.target.closest(sel))) {
+                gsap.to(cursor, {
+                    width: 90,
+                    height: 90,
+                    backgroundColor: "#000",
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: "sine.out",
+                });
+                gsap.to(textEl, { opacity: 1, duration: 0.2, ease: "sine.out" });
+            } else if (hideSelectors.some((sel) => e.target.closest(sel))) {
+                gsap.to(cursor, { scale: 0, duration: 0.2, ease: "sine.out" });
+                gsap.to(textEl, { opacity: 0, duration: 0.2, ease: "sine.out" });
+            } else {
+                gsap.to(cursor, {
+                    width: 20,
+                    height: 20,
+                    backgroundColor: "#e5e5e5",
+                    opacity: 0.5,
+                    scale: 1,
+                    duration: 0.2,
+                    ease: "sine.out",
+                });
+                gsap.to(textEl, { opacity: 0, duration: 0.2, ease: "sine.out" });
+            }
+        };
 
-//         rafId.current = requestAnimationFrame(animate);
+        document.addEventListener("pointermove", onPointerMove);
+        document.addEventListener("mousedown", onMouseDown);
+        document.addEventListener("mouseup", onMouseUp);
+        document.addEventListener("mouseover", handleInteractiveHover);
+        document.addEventListener("mouseleave", onMouseLeave);
 
-//         return () => {
-//             document.removeEventListener("mousemove", onMouseMove);
-//             document.removeEventListener("mousedown", onMouseDown);
-//             document.removeEventListener("mouseup", onMouseUp);
-//             window.removeEventListener("mouseenter", onMouseEnter);
-//             window.removeEventListener("mouseleave", onMouseLeave);
-//             cancelAnimationFrame(rafId.current);
-//         };
-//     }, []);
+        return () => {
+            document.removeEventListener("pointermove", onPointerMove);
+            document.removeEventListener("mousedown", onMouseDown);
+            document.removeEventListener("mouseup", onMouseUp);
+            document.removeEventListener("mouseover", handleInteractiveHover);
+            document.removeEventListener("mouseleave", onMouseLeave);
+        };
+    }, []);
 
-//     return (
-//         <div
-//             ref={cursorRef}
-//             className="
-//                 fixed top-0 left-0 w-5 h-5 
-//                 rounded-full bg-red-500 pointer-events-none 
-//                 z-[9999] opacity-0 
-//                 transition-transform duration-150 ease-in-out 
-//                 transition-opacity transition-colors will-change-transform will-change-opacity
-//             "
-//         />
-//     );
-// };
+    return (
+        <div
+            ref={cursorRef}
+            className="mil-ball fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white text-sm font-light tracking-widest"
+        >
+            <span className="cursor-text opacity-0 transition-opacity duration-200">MORE</span>
+        </div>
+    );
+};
 
-// export default CustomCursor;
+export default CustomCursor;

@@ -14,3 +14,7 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
+.mil-more:hover {
+    cursor: none !important;
+}
