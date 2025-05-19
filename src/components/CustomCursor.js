@@ -105,7 +105,7 @@ const CustomCursor = () => {
     return (
         <div
             ref={cursorRef}
-            className="mil-ball fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white text-sm font-light tracking-widest"
+            className="mil-ball fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white text-sm font-light tracking-widest hidden xl:flex"
         >
             <span className="cursor-text opacity-0 transition-opacity duration-200">MORE</span>
         </div>

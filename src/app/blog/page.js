@@ -12,7 +12,7 @@ export default async function BlogListPage() {
     const blogs = await getBlogs();
 
     return (
-        <div>
+        <div className="bg-white">
             <Breadcrumbs customclass="container" />
             <header className="container !my-18">
                 <h1 className="text-4xl text-center sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight lg:text-left">

@@ -35,7 +35,7 @@ export default async function BlogDetailPage(context) {
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />
                 </div>
-                <h1 className="text-6xl font-medium text-center my-32">{blog.title}</h1>
+                <h1 className="text-2xl font-medium text-center my-12 sm:my-32 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{blog.title}</h1>
                 <img
                     src={blog.images?.[0] || "/placeholder.jpg"}
                     alt={blog.title}
@@ -43,7 +43,7 @@ export default async function BlogDetailPage(context) {
                     data-value1="0.8"
                     data-value2="1.1"
                 />
-                <div className="mil-up flex justify-between py-12 border-b border-neutral-200">
+                <div className="mil-up flex flex-col sm:flex-row justify-between py-12 border-b border-neutral-200">
                     <p className="uppercase text-neutral-500 tracking-widest text-sm">
                         category: <span className="text-black">{blog.category}</span>
                     </p>
@@ -54,7 +54,7 @@ export default async function BlogDetailPage(context) {
                         author: <span className="text-black">{blog.author}</span>
                     </p>
                 </div>
-                <p className="mil-up max-w-[1000px] text-xl font-light mx-auto my-18">{blog.content}</p>
+                <p className="mil-up max-w-[1000px] text-xl font-light mx-auto my-6 sm:my-18">{blog.content}</p>
             </div>
         </div>
     );

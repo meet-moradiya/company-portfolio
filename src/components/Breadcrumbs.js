@@ -22,7 +22,7 @@ const Breadcrumbs = ({ background = "white", customclass = "" }) => {
     const linkColor = isDark ? "hover:text-amber-300" : "hover:text-amber-500";
 
     return (
-        <nav className={`py-12 border-b border-neutral-200 ${bgClass} ${customclass}`}>
+        <nav className={`py-12 border-b border-neutral-200 hidden md:block ${bgClass} ${customclass}`}>
             <Link href="/" className={`p-2 ${linkColor} duration-300 ease-in-out`}>
                 HOMEPAGE
             </Link>

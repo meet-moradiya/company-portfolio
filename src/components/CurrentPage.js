@@ -6,7 +6,11 @@ const CurrentPage = () => {
     const pathname = usePathname();
     const segments = pathname.split("/").filter(Boolean);
 
-    return <span className="fixed bottom-25 left-12 z-999 text-sm font-medium uppercase tracking-widest -rotate-90">{segments[0]}</span>;
+    return (
+        <span className="fixed bottom-25 left-8 z-999 text-sm font-medium uppercase tracking-widest -rotate-90 mix-blend-difference text-white pointer-events-none hidden xl:block">
+            {segments[0] || "homepage"}
+        </span>
+    );
 };
 
 export default CurrentPage;
