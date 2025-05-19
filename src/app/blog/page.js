@@ -1,7 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BlogCard from "@/components/BlogCard";
-import BackToTop from "@/components/BackToTop";
-import ScrollTriggerInit from "@/components/ScrollTriggerInit";
 
 async function getBlogs() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`, {
@@ -15,8 +13,6 @@ export default async function BlogListPage() {
 
     return (
         <div>
-            <ScrollTriggerInit />
-            <BackToTop />
             <Breadcrumbs customclass="container" />
             <header className="container !my-18">
                 <h1 className="text-4xl text-center sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight lg:text-left">

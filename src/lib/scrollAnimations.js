@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export function animateMilUp() {
     const appearance = document.querySelectorAll(".mil-up");
@@ -106,7 +107,21 @@ export function animateMilRotate() {
     });
 }
 
+export function SmoothScroll() {
+    if (typeof window === "undefined") return;
+
+    if (!ScrollSmoother.get()) {
+        ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 1.2,
+            effects: true,
+        });
+    }
+}
+
 export function initScrollAnimations() {
+    SmoothScroll();
     animateMilUp();
     animateMilScale();
     animateMilParallax();

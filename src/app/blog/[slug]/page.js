@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { DateFormat } from "@/lib/utility";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import ScrollTriggerInit from "@/components/ScrollTriggerInit";
-import BackToTop from "@/components/BackToTop";
 
 async function getBlog(slug) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${slug}`, {
@@ -33,8 +31,6 @@ export default async function BlogDetailPage(context) {
 
     return (
         <div>
-            <BackToTop />
-            <ScrollTriggerInit />
             <div className="container flex flex-col justify-center overflow-hidden">
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />
@@ -47,7 +43,7 @@ export default async function BlogDetailPage(context) {
                     data-value1="0.8"
                     data-value2="1.1"
                 />
-                <div className="flex justify-between py-12 border-b border-neutral-200">
+                <div className="mil-up flex justify-between py-12 border-b border-neutral-200">
                     <p className="uppercase text-neutral-500 tracking-widest text-sm">
                         category: <span className="text-black">{blog.category}</span>
                     </p>
@@ -58,7 +54,7 @@ export default async function BlogDetailPage(context) {
                         author: <span className="text-black">{blog.author}</span>
                     </p>
                 </div>
-                <p className="max-w-[1000px] text-xl font-light mx-auto my-18">{blog.content}</p>
+                <p className="mil-up max-w-[1000px] text-xl font-light mx-auto my-18">{blog.content}</p>
             </div>
         </div>
     );
