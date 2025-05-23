@@ -19,9 +19,12 @@ export default async function BlogDetailPage(context) {
                 <div className="h-[100px]">Company</div>
                 <div className="flex-1 flex flex-col gap-4 justify-center items-center">
                     <Image src="/pagenotfound.svg" alt="Page Not Found" width={650} height={400} />
-                    <h4 className="text-2xl sm:text-4xl font-medim text-center">This Page Does Not Exist</h4>
+                    <h4 className="text-2xl sm:text-4xl font-medim text-center">
+                        This Page Does Not Exist
+                    </h4>
                     <p className="text-sm sm:text-xl font-light text-center">
-                        Sorry, the page you are looking for could not be found. It's just an accident that was not intentional.
+                        Sorry, the page you are looking for could not be found. It's just an
+                        accident that was not intentional.
                     </p>
                 </div>
             </div>
@@ -35,7 +38,9 @@ export default async function BlogDetailPage(context) {
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />
                 </div>
-                <h1 className="text-2xl font-medium text-center my-12 sm:my-32 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{blog.title}</h1>
+                <h1 className="text-2xl font-medium text-center my-12 sm:my-32 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                    {blog.title}
+                </h1>
                 <img
                     src={blog.images?.[0] || "/placeholder.jpg"}
                     alt={blog.title}
@@ -54,7 +59,9 @@ export default async function BlogDetailPage(context) {
                         author: <span className="text-black">{blog.author}</span>
                     </p>
                 </div>
-                <p className="mil-up max-w-[1000px] text-xl font-light mx-auto my-6 sm:my-18">{blog.content}</p>
+                <p className="mil-up max-w-[1000px] text-xl font-light mx-auto my-6 sm:my-18">
+                    {blog.content}
+                </p>
             </div>
         </div>
     );

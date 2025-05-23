@@ -9,13 +9,9 @@ export default function Home() {
                 </Link>
             </section>
 
-            <section className="bg-black min-h-screen">
-                section2
-            </section>
+            <section className="bg-black min-h-screen">section2</section>
 
-            <section className="bg-white min-h-screen">
-                section3
-            </section>
+            <section className="bg-white min-h-screen">section3</section>
         </div>
     );
 }
