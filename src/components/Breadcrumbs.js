@@ -19,7 +19,7 @@ const Breadcrumbs = ({ background = "white", customclass = "" }) => {
 
     const isDark = background === "black";
     const bgClass = isDark ? "bg-black text-white" : "bg-white text-black";
-    const linkColor = isDark ? "hover:text-amber-300" : "hover:text-amber-500";
+    const linkColor = isDark ? "hover:text-violet-300" : "hover:text-violet-500";
 
     return (
         <nav className={`py-12 border-b border-neutral-200 hidden md:block ${bgClass} ${customclass}`}>

@@ -20,7 +20,7 @@ export default function BlogCard({ blog }) {
 
             <div className="md:w-[55%] flex flex-col justify-between py-8">
                 <div className="mil-up text-xs uppercase font-medium tracking-widest mb-2">
-                    <span className="text-amber-500">{blog.category}</span> &nbsp; • &nbsp; {publishedDate}
+                    <span className="text-violet-500">{blog.category}</span> &nbsp; • &nbsp; {publishedDate}
                 </div>
                 <h2 className="mil-up text-2xl font-medium">{blog.title}</h2>
                 <p className="mil-up text-neutral-500 font-light line-clamp-3">{blog.content.replace(/<[^>]+>/g, "")}</p>

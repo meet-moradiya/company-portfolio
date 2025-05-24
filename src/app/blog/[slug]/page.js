@@ -9,6 +9,29 @@ async function getBlog(slug) {
     return res.json();
 }
 
+export async function generateMetadata(context) {
+    const params = await context.params;
+    const blog = await getBlog(params.slug);
+
+    if (!blog) {
+        return {
+            title: "Blog Not Found",
+            description: "This blog post does not exist.",
+        };
+    }
+
+    return {
+        title: blog.meta?.title || blog.title,
+        description: blog.meta?.description || blog.content?.slice(0, 150),
+        keywords: blog.meta?.keywords || [],
+        openGraph: {
+            title: blog.meta?.title || blog.title,
+            description: blog.meta?.description || blog.content?.slice(0, 150),
+            images: blog.images?.[0] ? [blog.images[0]] : [],
+        },
+    };
+}
+
 export default async function BlogDetailPage(context) {
     const params = await context.params;
     const blog = await getBlog(params.slug);
@@ -20,9 +43,7 @@ export default async function BlogDetailPage(context) {
                 <div className="flex-1 flex flex-col gap-4 justify-center items-center">
                     <Image src="/pagenotfound.svg" alt="Page Not Found" width={650} height={400} />
                     <h4 className="text-2xl sm:text-4xl font-medim text-center">This Page Does Not Exist</h4>
-                    <p className="text-sm sm:text-xl font-light text-center">
-                        Sorry, the page you are looking for could not be found. It's just an accident that was not intentional.
-                    </p>
+                    <p className="text-sm sm:text-xl font-light text-center">{"Sorry, The page you're looking for can't be found."}</p>
                 </div>
             </div>
         );
@@ -30,7 +51,7 @@ export default async function BlogDetailPage(context) {
     const publishedDate = DateFormat(blog.createdAt);
 
     return (
-        <div>
+        <div className="bg-white py-34">
             <div className="container flex flex-col justify-center overflow-hidden">
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />

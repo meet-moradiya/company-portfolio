@@ -1,7 +1,7 @@
 export default function CustomLinkButton({ text = "default text", containerClassName = "", textClassName = "", iconWrapperClassName = "" }) {
     return (
         <div className={`flex items-center gap-4 group cursor-pointer ${containerClassName}`}>
-            <span className={`text-xs uppercase font-medium py-2 hover:text-amber-500 duration-300 ease-in-out tracking-[2px] ${textClassName}`}>
+            <span className={`text-xs uppercase font-medium py-2 hover:text-violet-500 duration-300 ease-in-out tracking-[2px] ${textClassName}`}>
                 {text}
             </span>
             <span

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <div>
-            <section className="bg-white min-h-screen">
+            <section className="bg-white min-h-screen py-34">
                 <Link className="mil-more" href="/blog">
                     Blog
                 </Link>
