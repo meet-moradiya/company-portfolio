@@ -2,7 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import BlogCard from "@/components/BlogCard";
 
 async function getBlogs() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/blog`, {
         cache: "no-store",
     });
     return res.json();

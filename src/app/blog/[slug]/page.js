@@ -3,7 +3,7 @@ import { DateFormat } from "@/lib/utility";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 async function getBlog(slug) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${slug}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/blog/${slug}`, {
         cache: "no-store",
     });
     return res.json();
