@@ -37,7 +37,7 @@ export default function BackToTop() {
     };
 
     return (
-        <div className="fixed bottom-30 right-2 z-999 -rotate-90 mix-blend-difference hidden xl:block">
+        <div className="fixed bottom-30 right-2 z-[999] -rotate-90 mix-blend-difference hidden xl:block">
             <a href="#" ref={buttonRef} onClick={scrollToTop} className="inline-block">
                 <CustomLinkButton text="back to top" textClassName="text-white" />
             </a>

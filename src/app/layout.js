@@ -7,10 +7,10 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-    title: "My Website",
-    description: "A beautifully crafted Next.js website with smooth scrolling.",
+    title: "Meet Moradiya",
+    description: "Create Your Identity Online",
     keywords: ["Next.js", "GSAP", "Smooth Scroll", "Web Design"],
-    authors: [{ name: "Your Name", url: "https://yourwebsite.com" }],
+    authors: [{ name: "Meet Moradiya", url: "https://yourwebsite.com" }],
     icons: {
         icon: "/favicon.ico",
     },

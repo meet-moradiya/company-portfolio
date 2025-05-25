@@ -10,7 +10,7 @@ const NavLink = ({ href, children, onClick }) => {
     return (
         <div className="w-fit flex items-center gap-4 group">
             <span
-                className={`w-3 h-3 rounded-full transition-all duration-300 transform
+                className={`w-3 h-3 rounded-full transition-all duration-300 transform hidden lg:block
                     ${
                         isActive
                             ? "translate-x-4 bg-violet-500 opacity-100"
@@ -20,8 +20,8 @@ const NavLink = ({ href, children, onClick }) => {
             <Link
                 href={href}
                 onClick={onClick}
-                className={`transition-all duration-400 text-4xl font-medium transform ${
-                    isActive ? "text-violet-500 translate-x-6" : "text-white group-hover:translate-x-6"
+                className={`transition-all duration-400 text-2xl md:text-3xl lg:text-4xl font-medium transform ${
+                    isActive ? "text-violet-500 translate-x-0 lg:translate-x-6" : "text-white group-hover:translate-x-0 lg:group-hover:translate-x-6"
                 }`}
             >
                 {children}
