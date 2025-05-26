@@ -38,9 +38,9 @@ export default function Home() {
                             <br /> Our <span className="font-thin">Hub</span>
                         </h1>
                         <p className="mil-up mt-8 md:mt-18 text-lg font-light text-black/50">
-                            We're a collective of skilled minds, ignited by our passion for turning concepts into reality. With diverse backgrounds
-                            and extensive expertise, we unite to craft innovative IT solutions. Collaboration fuels our creativity, blending unique
-                            perspectives to exceed expectations.
+                            {
+                                "We're a collective of skilled minds, ignited by our passion for turning concepts into reality. With diverse backgrounds and extensive expertise, we unite to craft innovative IT solutions. Collaboration fuels our creativity, blending unique perspectives to exceed expectations."
+                            }
                         </p>
                         <p className="mil-up mt-8 text-lg font-light text-black/50">
                             Our team thrives on synergy, creating an environment of boundless creativity. By harnessing our collective expertise, we
@@ -83,9 +83,9 @@ export default function Home() {
                             />
                         </Link>
                     </div>
-                    <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 w-full">
+                    <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 sm:gap-12 xl:grid-cols-4 xl:gap-0 w-full">
                         <Link href={"/services"}>
-                            <div className="mil-up border border-t-3 border-t-violet-500 border-white/10 text-white py-12 px-8 group">
+                            <div className="mil-up border border-white/10 sm:border-l-2 sm:border-l-violet-500 xl:border xl:border-t-3 xl:border-t-violet-500 xl:border-white/10 text-white py-12 px-8 group">
                                 <h1 className="text-3xl font-medium">Branding and Identity Design</h1>
                                 <p className="font-light text-white/50 mt-8 duration-500 ease-in-out xl:opacity-0 xl:translate-y-3 group-hover:opacity-100 group-hover:translate-y-0">
                                     Proficiency in creating memorable logos and recognizable visual brands.
@@ -98,7 +98,7 @@ export default function Home() {
                             </div>
                         </Link>
                         <Link href={"/services"}>
-                            <div className="mil-up border border-b-3 border-b-violet-500 border-white/10 text-white py-12 px-8 group">
+                            <div className="mil-up border border-white/10 sm:border-l-2 sm:border-l-violet-500 xl:border xl:border-b-3 xl:border-b-violet-500 xl:border-white/10 text-white py-12 px-8 group">
                                 <h1 className="text-3xl font-medium">Website Design & Development</h1>
                                 <p className="font-light text-white/50 mt-8 duration-500 ease-in-out xl:opacity-0 xl:translate-y-3 group-hover:opacity-100 group-hover:translate-y-0">
                                     Our creative agency is a team of professionals focused on helping your brand grow.
@@ -111,10 +111,10 @@ export default function Home() {
                             </div>
                         </Link>
                         <Link href={"/services"}>
-                            <div className="mil-up border border-t-3 border-t-violet-500 border-white/10 text-white py-12 px-8 group">
+                            <div className="mil-up border border-white/10 sm:border-l-2 sm:border-l-violet-500 xl:border xl:border-t-3 xl:border-t-violet-500 xl:border-white/10 text-white py-12 px-8 group">
                                 <h1 className="text-3xl font-medium">Creative App Development</h1>
                                 <p className="font-light text-white/50 mt-8 duration-500 ease-in-out xl:opacity-0 xl:translate-y-3 group-hover:opacity-100 group-hover:translate-y-0">
-                                    Our skilled team is committed to developing mobile applications that amplify your brand's reach.
+                                    {"Our skilled team is committed to developing mobile applications that amplify your brand's reach."}
                                 </p>
                                 <div className="w-fit mt-12 p-2 bg-violet-500 xl:scale-40 rounded-full xl:bg-white/20 transition-transform duration-400 ease-in-out group-hover:scale-110 group-hover:bg-violet-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ export default function Home() {
                             </div>
                         </Link>
                         <Link href={"/services"}>
-                            <div className="mil-up border border-b-3 border-b-violet-500 border-white/10 text-white py-12 px-8 group">
+                            <div className="mil-up border border-white/10 sm:border-l-2 sm:border-l-violet-500 xl:border xl:border-b-3 xl:border-b-violet-500 xl:border-white/10 text-white py-12 px-8 group">
                                 <h1 className="text-3xl font-medium">Game Development</h1>
                                 <p className="font-light text-white/50 mt-8 duration-500 ease-in-out xl:opacity-0 xl:translate-y-3 group-hover:opacity-100 group-hover:translate-y-0">
                                     We have a team of Professional game designer and developer to bring your game to the world.
