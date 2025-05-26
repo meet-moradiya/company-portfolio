@@ -30,7 +30,7 @@ export default function CustomScrollbar() {
     }, []);
 
     return (
-        <div className="fixed top-0 right-0 w-1 h-screen bg-black z-[9999] hidden lg:block">
+        <div className="fixed top-0 right-0 w-1 h-screen bg-transparent z-[9999] hidden lg:block">
             <div className="w-full h-0 bg-violet-500 origin-top" ref={thumbRef}></div>
         </div>
     );
