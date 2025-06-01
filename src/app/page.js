@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CustomLinkButton from "@/components/CustomLinkButton";
+import TeamMember from "@/components/TeamMember";
 
 export default function Home() {
     return (
@@ -140,7 +141,29 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white min-h-screen">section4</section>
+            <section id="team" className="bg-white min-h-fit">
+                <div className="container py-18 md:py-32">
+                    <div className="mil-up">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-center font-medium">
+                            <span className="font-thin">Meet Our </span>Team
+                        </h1>
+                        <p className="px-12 mil-up mt-12 text-lg font-light text-black/50">
+                            Our team is a powerhouse of creativity and enthusiasm, always eager to take on new challenges. We thrive on pushing
+                            boundaries because it drives us to perfection.
+                        </p>
+                        <p className="px-12 mil-up mt-4 text-lg font-light text-black/50">
+                            With over 7 years of collective experience, our developers bring a wealth of expertise to the table. Whether it's tackling
+                            complex projects or finding innovative solutions, we're dedicated to delivering excellence. Join us as we embark on a
+                            journey of innovation and success together.
+                        </p>
+                    </div>
+                    <TeamMember />
+                </div>
+            </section>
+
+            <section className="bg-black min-h-screen">
+
+            </section>
         </>
     );
 }

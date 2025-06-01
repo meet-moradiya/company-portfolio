@@ -275,7 +275,7 @@ const Navbar = () => {
                                     d="M10,10 L50,10"
                                     animate={{
                                         d: menuOpen ? "M15,15 L45,25" : "M10,10 L50,10",
-                                        rotate: menuOpen ? 45 : 0,
+                                        rotate: menuOpen ? 25 : 0,
                                     }}
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                     style={{ transformOrigin: "30px 20px" }}
@@ -293,7 +293,7 @@ const Navbar = () => {
                                     d="M10,30 L50,30"
                                     animate={{
                                         d: menuOpen ? "M15,25 L45,15" : "M10,30 L50,30",
-                                        rotate: menuOpen ? -45 : 0,
+                                        rotate: menuOpen ? -25 : 0,
                                     }}
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                     style={{ transformOrigin: "30px 20px" }}
