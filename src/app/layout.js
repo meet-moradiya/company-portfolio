@@ -5,7 +5,11 @@ import CurrentPage from "@/components/CurrentPage";
 import BackToTop from "@/components/BackToTop";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import Navbar from "@/components/Navbar";
+<<<<<<< HEAD
 import LoadingProvider from "@/components/LoadingProvider";
+=======
+import Footer from "@/components/Footer";
+>>>>>>> 0f41d5e (navbar's hamburger line fixed and footer added)
 
 export const metadata = {
     title: "Meet Moradiya",
@@ -21,6 +25,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
+<<<<<<< HEAD
                 <LoadingProvider>
                     <CustomCursor />
                     <CustomScrollbar />
@@ -32,6 +37,20 @@ export default function RootLayout({ children }) {
                         <div id="smooth-content">{children}</div>
                     </div>
                 </LoadingProvider>
+=======
+                <CustomCursor />
+                <CustomScrollbar />
+                <ScrollTriggerInit />
+                <div id="smooth-wrapper">
+                    <CurrentPage />
+                    <BackToTop />
+                    <Navbar />
+                    <div id="smooth-content">
+                        {children}
+                        <Footer />
+                    </div>
+                </div>
+>>>>>>> 0f41d5e (navbar's hamburger line fixed and footer added)
             </body>
         </html>
     );

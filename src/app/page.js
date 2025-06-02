@@ -161,9 +161,9 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-black min-h-screen">
+            {/* <section className="bg-black min-h-screen">
 
-            </section>
+            </section> */}
         </>
     );
 }
