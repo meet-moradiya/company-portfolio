@@ -1,6 +1,22 @@
-export default function CustomLinkButton({ text = "default text", containerClassName = "", textClassName = "", iconWrapperClassName = "" }) {
+"use client";
+
+import { useLoading } from "./LoadingProvider";
+import { useRouter } from "next/navigation";
+
+export default function CustomLinkButton({ href, text = "default text", containerClassName = "", textClassName = "", iconWrapperClassName = "" }) {
+    const { setIsLoading } = useLoading();
+    const router = useRouter();
+
+    const handleClick = () => {
+        setIsLoading(true);
+        router.push(href);
+    };
+
     return (
-        <div className={`flex items-center gap-4 group cursor-pointer ${containerClassName}`}>
+        <div 
+            onClick={handleClick}
+            className={`flex items-center gap-4 group cursor-pointer ${containerClassName}`}
+        >
             <span className={`text-xs uppercase font-medium py-2 hover:text-violet-500 duration-300 ease-in-out tracking-[2px] ${textClassName}`}>
                 {text}
             </span>

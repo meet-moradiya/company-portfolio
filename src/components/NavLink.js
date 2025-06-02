@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLoading } from "./LoadingProvider";
 
 const NavLink = ({ href, children, onClick }) => {
     const pathname = usePathname();
     const isActive = pathname === href;
+    const { setIsLoading } = useLoading();
+
+    const handleClick = (e) => {
+        if (onClick) {
+            onClick(e);
+        }
+        setIsLoading(true);
+    };
 
     return (
         <div className="w-fit flex items-center gap-4 group">
@@ -19,7 +28,7 @@ const NavLink = ({ href, children, onClick }) => {
             />
             <Link
                 href={href}
-                onClick={onClick}
+                onClick={handleClick}
                 className={`transition-all duration-400 text-2xl md:text-3xl lg:text-4xl font-medium transform ${
                     isActive ? "text-violet-500 translate-x-0 lg:translate-x-6" : "text-white group-hover:translate-x-0 lg:group-hover:translate-x-6"
                 }`}

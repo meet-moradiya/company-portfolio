@@ -11,12 +11,6 @@ const teamMembers = [
         image: "./meet.jpeg",
     },
     {
-        name: "Khushal Dhola",
-        role: "Full-Stack Developer",
-        experience: "2 Years",
-        image: "./khushal.jpeg",
-    },
-    {
         name: "Pratik Talaviya",
         role: "AI Engineer",
         experience: "2.5 Years",
@@ -39,6 +33,12 @@ const teamMembers = [
         role: "Mobile App Developer",
         experience: "2.5 Year",
         image: "./hardiknasit.webp",
+    },
+    {
+        name: "Khushal Dhola",
+        role: "Full-Stack Developer",
+        experience: "2 Years",
+        image: "./khushal.webp",
     },
 ];
 
