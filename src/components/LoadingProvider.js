@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { createContext, useContext, useState, useEffect, Suspense } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import LoadingScreen from "./LoadingScreen";
 
 const LoadingContext = createContext({
@@ -11,14 +11,20 @@ const LoadingContext = createContext({
 
 export const useLoading = () => useContext(LoadingContext);
 
-export default function LoadingProvider({ children }) {
-    const [isLoading, setIsLoading] = useState(false);
+// Separate component for route change detection
+function RouteChangeListener({ setIsLoading }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
     useEffect(() => {
         setIsLoading(false);
-    }, [pathname, searchParams]);
+    }, [pathname, searchParams, setIsLoading]);
+
+    return null;
+}
+
+export default function LoadingProvider({ children }) {
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         if (isLoading) {
@@ -30,6 +36,9 @@ export default function LoadingProvider({ children }) {
 
     return (
         <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+            <Suspense fallback={null}>
+                <RouteChangeListener setIsLoading={setIsLoading} />
+            </Suspense>
             {isLoading && <LoadingScreen />}
             <div style={{ 
                 opacity: isLoading ? 0.3 : 1, 
