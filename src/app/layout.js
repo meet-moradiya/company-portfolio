@@ -5,9 +5,7 @@ import CurrentPage from "@/components/CurrentPage";
 import BackToTop from "@/components/BackToTop";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import Navbar from "@/components/Navbar";
-import LoadingProvider from "@/components/LoadingProvider";
 import Footer from "@/components/Footer";
-import { Suspense } from "react";
 
 export const metadata = {
     title: "Meet Moradiya",
@@ -23,7 +21,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <LoadingProvider>
                     <CustomCursor />
                     <CustomScrollbar />
                     <ScrollTriggerInit />
@@ -32,13 +29,10 @@ export default function RootLayout({ children }) {
                         <BackToTop />
                         <Navbar />
                         <div id="smooth-content">
-                            <Suspense>
                                 {children}
                                 <Footer />
-                            </Suspense>
                         </div>
                     </div>
-                </LoadingProvider>
             </body>
         </html>
     );

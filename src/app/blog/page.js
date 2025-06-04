@@ -1,6 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BlogCard from "@/components/BlogCard";
-import { Suspense } from 'react';
 
 async function getBlogs() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/blog`, {
@@ -13,7 +12,6 @@ export default async function BlogListPage() {
     const blogs = await getBlogs();
 
     return (
-        <Suspense fallback={<div>Loading blog page...</div>}>
             <div className="bg-white py-34">
                 <Breadcrumbs customclass="container" />
                 <header className="container !my-18">
@@ -31,6 +29,5 @@ export default async function BlogListPage() {
                     ))}
                 </div>
             </div>
-        </Suspense>
     );
 }
