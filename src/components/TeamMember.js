@@ -8,7 +8,7 @@ const teamMembers = [
         name: "Meet Moradiya",
         role: "Full-Stack Developer",
         experience: "3 Years",
-        image: "./meet.jpeg",
+        image: "./MeetMoradiya.jpeg",
     },
     {
         name: "Pratik Talaviya",
@@ -20,25 +20,25 @@ const teamMembers = [
         name: "Vaidik Jetani",
         role: "DevOps Engineer",
         experience: "3.5 Years",
-        image: "./vaidik.jpeg",
+        image: "./VaidikJetani.jpeg",
     },
     {
         name: "Kenil Kanani",
         role: "Back-end Developer",
         experience: "2 Years",
-        image: "./kenil.jpg",
+        image: "./KenilKanani.jpg",
     },
     {
         name: "Hardik Nasit",
         role: "Mobile App Developer",
         experience: "2.5 Year",
-        image: "./hardiknasit.webp",
+        image: "./HardikNasit.webp",
     },
     {
         name: "Khushal Dhola",
         role: "Full-Stack Developer",
         experience: "2 Years",
-        image: "./khushal.webp",
+        image: "./KhushalDhola.webp",
     },
 ];
 

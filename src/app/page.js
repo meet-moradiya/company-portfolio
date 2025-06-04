@@ -1,8 +1,19 @@
 import Link from "next/link";
 import CustomLinkButton from "@/components/CustomLinkButton";
 import TeamMember from "@/components/TeamMember";
+import InfiniteLogoScroller from "@/components/InfiniteLogoScroller";
 
 export default function Home() {
+    const logos = [
+        "/logos/DairyDonLogo.svg",
+        "/logos/MahimaLogo.png",
+        "/logos/BhavyataArchitectsLogo.png",
+        "/logos/AnandHospital.png",
+        "/logos/ChhotiSiMuskanLogo.svg",
+        "/logos/SapphireLogo.png",
+        "/logos/ParamHospitalLogo.png",
+    ];
+
     return (
         <>
             <section className="py-34 bg-black text-white h-screen flex flex-col justify-center items-center">
@@ -59,7 +70,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="max-w-[450px] max-h-[700px] overflow-hidden">
-                        <img src="/startup.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
+                        <img src="/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
                     </div>
                 </div>
             </section>
@@ -141,7 +152,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="team" className="bg-white min-h-fit">
+            <section className="bg-white min-h-fit">
                 <div className="container py-18 md:py-32">
                     <div className="mil-up">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-center font-medium">
@@ -161,9 +172,9 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <section className="bg-black min-h-screen">
-
-            </section> */}
+            <section className="py-16 sm:py-24">
+                <InfiniteLogoScroller logos={logos} />
+            </section>
         </>
     );
 }
