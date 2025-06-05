@@ -2,43 +2,44 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const teamMembers = [
     {
         name: "Meet Moradiya",
         role: "Full-Stack Developer",
         experience: "3 Years",
-        image: "./MeetMoradiya.jpeg",
+        image: "/MeetMoradiya.jpeg",
     },
     {
         name: "Pratik Talaviya",
         role: "AI Engineer",
         experience: "2.5 Years",
-        image: "./PratikTalaviya.jpeg",
+        image: "/PratikTalaviya.jpeg",
     },
     {
         name: "Vaidik Jetani",
         role: "DevOps Engineer",
         experience: "3.5 Years",
-        image: "./VaidikJetani.jpeg",
+        image: "/VaidikJetani.jpeg",
     },
     {
         name: "Kenil Kanani",
         role: "Back-end Developer",
         experience: "2 Years",
-        image: "./KenilKanani.jpg",
+        image: "/KenilKanani.jpg",
     },
     {
         name: "Hardik Nasit",
         role: "Mobile App Developer",
         experience: "2.5 Year",
-        image: "./HardikNasit.webp",
+        image: "/HardikNasit.webp",
     },
     {
         name: "Khushal Dhola",
         role: "Full-Stack Developer",
         experience: "2 Years",
-        image: "./KhushalDhola.webp",
+        image: "/KhushalDhola.webp",
     },
 ];
 
@@ -58,7 +59,9 @@ export default function TeamMember() {
                     >
                         <div className="cursor-pointer h-fit rounded-full bg-white p-1">
                             <div className="h-[150px] w-[150px] rounded-full overflow-hidden">
-                                <img
+                                <Image
+                                    width={150}
+                                    height={150}
                                     src={member.image}
                                     alt={member.name.toLowerCase().replace(" ", "-")}
                                     className="h-full w-full object-cover hover:scale-105 duration-500 ease-in-out"

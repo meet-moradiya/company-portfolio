@@ -2,6 +2,7 @@ import Link from "next/link";
 import CustomLinkButton from "@/components/CustomLinkButton";
 import TeamMember from "@/components/TeamMember";
 import InfiniteLogoScroller from "@/components/InfiniteLogoScroller";
+import Image from "next/image";
 
 export default function Home() {
     const logos = [
@@ -70,7 +71,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="max-w-[450px] max-h-[700px] overflow-hidden">
-                        <img src="/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
+                        <Image height={700} width={450} src="/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
                     </div>
                 </div>
             </section>
