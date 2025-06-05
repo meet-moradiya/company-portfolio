@@ -43,8 +43,8 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white py-18 md:py-32 min-h-screen 2xl:min-h-fit">
-                <div className="container flex flex-col gap-12 items-center lg:flex-row justify-between">
+            <section className="bg-white min-h-screen 2xl:min-h-fit">
+                <div className="container py-18 md:py-32 flex flex-col gap-12 items-center lg:flex-row justify-between">
                     <div className="max-w-[500px] max-h-[700px]">
                         <h1 className="mil-up text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium md:mt-12">
                             Discover
@@ -71,7 +71,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="max-w-[450px] max-h-[700px] overflow-hidden">
-                        <Image height={700} width={450} src="/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
+                        <Image height={700} width={450} src="/images/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
                     </div>
                 </div>
             </section>
@@ -153,8 +153,8 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white min-h-fit">
-                <div className="container py-18 md:py-32">
+            <section className="bg-white min-h-screen 2xl:min-h-fit">
+                <div className="container py-18 md:py-28">
                     <div className="mil-up">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-center font-medium">
                             <span className="font-thin">Meet Our </span>Team
@@ -170,6 +170,94 @@ export default function Home() {
                         </p>
                     </div>
                     <TeamMember />
+                </div>
+            </section>
+
+            <section className="bg-black min-h-screen 2xl:min-h-fit">
+                <div className="container flex flex-col lg:flex-row gap-16 py-18 md:py-24">
+                    <div className="flex flex-col justify-around">
+                        <div>
+                            <h1 className="mil-up text-white text-center lg:text-left text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium">
+                                <span className="font-thin">Crafting Digital </span>Excellence
+                            </h1>
+                            <p className="mil-up mt-8 text-center lg:text-left text-lg font-light text-white/50 lg:max-w-lg">
+                                Our goal is to deliver practical and effective digital solutions that help businesses operate more efficiently,
+                                connect with their customers, and stay ahead in a fast-moving digital world. Whether it's a small feature or a
+                                complete system, we approach every project with the same level of dedication and care.
+                            </p>
+                            <Link href={"/services"}>
+                                <CustomLinkButton
+                                    text="view more"
+                                    containerClassName="mil-up mt-16 mx-auto lg:mx-0 w-fit bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
+                                    textClassName="hover:text-white"
+                                    iconWrapperClassName="!bg-white !text-black"
+                                />
+                            </Link>
+                        </div>
+                        <h2 className="mil-up text-white text-center lg:text-left mt-12 lg:mt-0 font-thin text-3xl mb-0">
+                            We <span className="font-medium">delivering</span>
+                            <br />
+                            exceptional <span className="font-medium">results.</span>
+                        </h2>
+                    </div>
+                    <div className="flex flex-col lg:flex-row gap-8">
+                        <div className="flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col gap-8">
+                            <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
+                                <img
+                                    src="/images/Sapphire1.png"
+                                    alt="Sapphire"
+                                    className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-400 ease-in-out" />
+                                <div className="absolute inset-0 flex items-end justify-center">
+                                    <span className="mb-18 translate-y-5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-150 text-white text-xl font-medium">
+                                        Sapphire
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
+                                <img
+                                    src="/images/LiveStreamCoffee1.png"
+                                    alt="LiveStreamCoffee"
+                                    className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-400 ease-in-out" />
+                                <div className="absolute inset-0 flex items-end justify-center">
+                                    <span className="mb-18 translate-y-5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-150 text-white text-xl font-medium">
+                                        LiveStreamCoffee
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:mt-16 flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col gap-8">
+                            <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
+                                <img
+                                    src="/images/DairyDon1.png"
+                                    alt="DairyDon"
+                                    className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-400 ease-in-out" />
+                                <div className="absolute inset-0 flex items-end justify-center">
+                                    <span className="mb-18 translate-y-5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-150 text-white text-xl font-medium">
+                                        DairyDon
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
+                                <img
+                                    src="/images/ChhotiSiMuskan1.png"
+                                    alt="ChhotiSiMuskan"
+                                    className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-400 ease-in-out" />
+                                <div className="absolute inset-0 flex items-end justify-center">
+                                    <span className="mb-18 translate-y-5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-150 text-white text-xl font-medium">
+                                        ChhotiSiMuskan
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
