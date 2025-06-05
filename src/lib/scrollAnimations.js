@@ -1,129 +1,140 @@
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-export function animateMilUp() {
-    const appearance = document.querySelectorAll(".mil-up");
-
-    appearance.forEach((section) => {
-        gsap.fromTo(
-            section,
-            {
-                opacity: 0,
-                y: 40,
-                scale: 0.98,
-                ease: "sine",
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.4,
-                scrollTrigger: {
-                    trigger: section,
-                    toggleActions: "play none none reverse",
-                },
-            }
-        );
-    });
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 }
 
-export function animateMilScale() {
-    const scaleImage = document.querySelectorAll(".mil-scale");
-
-    scaleImage.forEach((section) => {
-        const value1 = parseFloat(section.dataset.value1);
-        const value2 = parseFloat(section.dataset.value2);
-
-        gsap.fromTo(
-            section,
-            {
-                scale: value1,
-                ease: "sine",
-            },
-            {
-                scale: value2,
-                ease: "sine",
-                scrollTrigger: {
-                    trigger: section,
-                    scrub: true,
-                    toggleActions: "play none none reverse",
-                },
-            }
-        );
-    });
-}
-
-export function animateMilParallax() {
-    const parallaxImage = document.querySelectorAll(".mil-parallax");
-
-    if (typeof window !== "undefined" && window.innerWidth > 960) {
-        parallaxImage.forEach((section) => {
-            const value1 = parseFloat(section.dataset.value1);
-            const value2 = parseFloat(section.dataset.value2);
-
-            gsap.fromTo(
-                section,
-                {
-                    y: value1,
-                    ease: "sine",
-                },
-                {
-                    y: value2,
-                    scrollTrigger: {
-                        trigger: section,
-                        scrub: true,
-                        toggleActions: "play none none reverse",
-                    },
-                }
-            );
-        });
-    }
-}
-
-export function animateMilRotate() {
-    const rotate = document.querySelectorAll(".mil-rotate");
-
-    rotate.forEach((section) => {
-        const value = parseFloat(section.dataset.value);
-
-        gsap.fromTo(
-            section,
-            {
-                rotate: 0,
-                ease: "sine",
-            },
-            {
-                rotate: value,
-                scrollTrigger: {
-                    trigger: section,
-                    scrub: true,
-                    toggleActions: "play none none reverse",
-                },
-            }
-        );
-    });
-}
-
-export function SmoothScroll() {
+export const initScrollAnimations = () => {
     if (typeof window === "undefined") return;
 
-    if (!ScrollSmoother.get()) {
+    // Kill existing animations to prevent conflicts
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    
+    const smoother = ScrollSmoother.get();
+    if (smoother) smoother.kill();
+
+    // Wait for DOM to be ready
+    gsap.delayedCall(0.1, () => {
+        // Initialize ScrollSmoother
         ScrollSmoother.create({
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 1.2,
             effects: true,
+            smoothTouch: 0.1,
+            normalizeScroll: true,
         });
-    }
-}
 
-export function initScrollAnimations() {
-    SmoothScroll();
-    animateMilUp();
-    animateMilScale();
-    animateMilParallax();
-    animateMilRotate();
-}
+        // Refresh ScrollTrigger
+        ScrollTrigger.refresh();
+
+        // Initialize animations
+        initFadeUpAnimations();
+        initScaleAnimations();
+        initParallaxAnimations();
+    });
+};
+
+const initFadeUpAnimations = () => {
+    // Animate elements with .mil-up class
+    gsap.utils.toArray(".mil-up").forEach((element) => {
+        gsap.fromTo(
+            element,
+            {
+                opacity: 0,
+                y: 60,
+                scale: 0.95,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    end: "bottom 15%",
+                    toggleActions: "play none none reverse",
+                },
+            }
+        );
+    });
+};
+
+const initScaleAnimations = () => {
+    // Animate elements with .mil-scale class
+    gsap.utils.toArray(".mil-scale").forEach((element) => {
+        const value1 = element.getAttribute("data-value1") || "1";
+        const value2 = element.getAttribute("data-value2") || "1.1";
+
+        gsap.fromTo(
+            element,
+            {
+                scale: parseFloat(value1),
+            },
+            {
+                scale: parseFloat(value2),
+                duration: 1.5,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                },
+            }
+        );
+    });
+};
+
+const initParallaxAnimations = () => {
+    // Add parallax effect to background elements
+    gsap.utils.toArray("[data-parallax]").forEach((element) => {
+        const speed = element.getAttribute("data-parallax") || "0.5";
+        
+        gsap.fromTo(
+            element,
+            {
+                y: 0,
+            },
+            {
+                y: () => -(element.offsetHeight * parseFloat(speed)),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                },
+            }
+        );
+    });
+};
+
+// Function to refresh animations after page transitions
+export const refreshScrollAnimations = () => {
+    if (typeof window === "undefined") return;
+    
+    gsap.delayedCall(0.2, () => {
+        ScrollTrigger.refresh();
+        
+        // Re-initialize animations for new content
+        initFadeUpAnimations();
+        initScaleAnimations();
+        initParallaxAnimations();
+    });
+};
+
+// Clean up function
+export const cleanupScrollAnimations = () => {
+    if (typeof window === "undefined") return;
+    
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    
+    const smoother = ScrollSmoother.get();
+    if (smoother) smoother.kill();
+};

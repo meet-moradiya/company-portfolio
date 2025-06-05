@@ -2,6 +2,7 @@ import Link from "next/link";
 import CustomLinkButton from "@/components/CustomLinkButton";
 import TeamMember from "@/components/TeamMember";
 import InfiniteLogoScroller from "@/components/InfiniteLogoScroller";
+import SmoothLinkButton from "@/components/SmoothLinkButton";
 
 export default function Home() {
     const logos = [
@@ -28,14 +29,21 @@ export default function Home() {
                     Powering Progress with People, Process, and Technology.
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-center mt-12">
-                    <Link href={"/services"}>
+                    {/* <Link href={"/services"}>
                         <CustomLinkButton
                             text="what we do"
                             containerClassName="bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
                             textClassName="hover:text-white"
                             iconWrapperClassName="!bg-white !text-black"
                         />
-                    </Link>
+                    </Link> */}
+                    <SmoothLinkButton 
+                        href="/services" 
+                        text="what we do"
+                        containerClassName="bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
+                        textClassName="hover:text-white"
+                        iconWrapperClassName="!bg-white !text-black"
+                    />
                     <Link href={"/portfolio"}>
                         <CustomLinkButton text="view works" />
                     </Link>

@@ -6,6 +6,7 @@ import BackToTop from "@/components/BackToTop";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata = {
     title: "Meet Moradiya",
@@ -21,18 +22,20 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                    <CustomCursor />
-                    <CustomScrollbar />
-                    <ScrollTriggerInit />
-                    <div id="smooth-wrapper">
-                        <CurrentPage />
-                        <BackToTop />
-                        <Navbar />
+                <CustomCursor />
+                <CustomScrollbar />
+                <ScrollTriggerInit />
+                <div id="smooth-wrapper">
+                    <CurrentPage />
+                    <BackToTop />
+                    <Navbar />
+                    <PageTransition>
                         <div id="smooth-content">
-                                {children}
-                                <Footer />
+                            {children}
+                            <Footer />
                         </div>
-                    </div>
+                    </PageTransition>
+                </div>
             </body>
         </html>
     );
