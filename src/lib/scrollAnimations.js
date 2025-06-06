@@ -10,6 +10,11 @@ if (typeof window !== "undefined") {
 export const initScrollAnimations = () => {
     if (typeof window === "undefined") return;
 
+    // Force scroll to top first
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
     // Kill existing animations to prevent conflicts
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     
@@ -19,14 +24,20 @@ export const initScrollAnimations = () => {
     // Wait for DOM to be ready
     gsap.delayedCall(0.1, () => {
         // Initialize ScrollSmoother
-        ScrollSmoother.create({
+        const newSmoother = ScrollSmoother.create({
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 1.2,
             effects: true,
             smoothTouch: 0.1,
             normalizeScroll: true,
+            ignoreMobileResize: true,
         });
+
+        // Force scroll to top after smoother is created
+        if (newSmoother) {
+            newSmoother.scrollTop(0);
+        }
 
         // Refresh ScrollTrigger
         ScrollTrigger.refresh();

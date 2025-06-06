@@ -73,12 +73,27 @@ const PageTransition = ({ children }) => {
                 ease: "back.out(1.7)"
             }, "-=0.1");
         });
-    };
-
-    const animateIn = () => {
+    };    const animateIn = () => {
         return new Promise((resolve) => {
             const tl = gsap.timeline({
-                onComplete: resolve
+                onComplete: () => {
+                    // After animation completes, reinitialize all GSAP animations
+                    if (typeof window !== 'undefined') {
+                        // Force scroll to top
+                        window.scrollTo(0, 0);
+                        document.documentElement.scrollTop = 0;
+                        document.body.scrollTop = 0;
+
+                        // Reinitialize GSAP animations
+                        const { initScrollAnimations } = require('@/lib/scrollAnimations');
+                        initScrollAnimations();
+                        
+                        // Finally resolve the promise
+                        resolve();
+                    } else {
+                        resolve();
+                    }
+                }
             });
 
             // Hide loader elements
@@ -104,14 +119,6 @@ const PageTransition = ({ children }) => {
                 duration: 0.6,
                 ease: "power2.out"
             }, "-=0.2");
-
-            // Re-trigger scroll animations for new content
-            tl.call(() => {
-                // Reset GSAP ScrollTrigger for new content
-                if (typeof window !== 'undefined' && window.ScrollTrigger) {
-                    window.ScrollTrigger.refresh();
-                }
-            });
         });
     };
 
@@ -168,7 +175,7 @@ const PageTransition = ({ children }) => {
                                         animation: "gradient-x 2s ease infinite",
                                     }}
                                 >
-                                    MD
+                                    KD
                                 </span>
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-pink-400/20 to-blue-400/20 blur-xl animate-pulse" />
