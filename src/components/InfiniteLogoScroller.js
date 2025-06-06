@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 const InfiniteLogoScroller = ({ logos, speed = 100 }) => {
@@ -29,7 +28,7 @@ const InfiniteLogoScroller = ({ logos, speed = 100 }) => {
             >
                 {[...logos, ...logos].map((logo, index) => (
                     <div key={index} className="mx-6 flex-shrink-0">
-                        <Image height={100} width={100} src={logo} alt={`Company logo ${index}`} className="h-24 w-auto object-contain" />
+                        <img src={logo} alt={`Company logo ${index}`} className="h-24 w-auto object-contain" />
                     </div>
                 ))}
             </motion.div>

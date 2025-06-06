@@ -9,7 +9,7 @@ export default function Home() {
         "/logos/DairyDonLogo.svg",
         "/logos/MahimaLogo.png",
         "/logos/BhavyataArchitectsLogo.png",
-        "/logos/AnandHospital.png",
+        "/logos/LifeSurgeHealthCare.svg",
         "/logos/ChhotiSiMuskanLogo.svg",
         "/logos/SapphireLogo.png",
         "/logos/ParamHospitalLogo.png",
@@ -46,16 +46,16 @@ export default function Home() {
             <section className="bg-white min-h-screen 2xl:min-h-fit">
                 <div className="container py-18 md:py-32 flex flex-col gap-12 items-center lg:flex-row justify-between">
                     <div className="max-w-[500px] max-h-[700px]">
-                        <h1 className="mil-up text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium md:mt-12">
+                        <h1 className="mil-up text-center lg:text-left text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium md:mt-12">
                             Discover
                             <br /> Our <span className="font-thin">Hub</span>
                         </h1>
-                        <p className="mil-up mt-8 md:mt-18 text-lg font-light text-black/50">
+                        <p className="mil-up text-center lg:text-left mt-8 md:mt-18 text-lg font-light text-black/50">
                             {
                                 "We're a collective of skilled minds, ignited by our passion for turning concepts into reality. With diverse backgrounds and extensive expertise, we unite to craft innovative IT solutions. Collaboration fuels our creativity, blending unique perspectives to exceed expectations."
                             }
                         </p>
-                        <p className="mil-up mt-8 text-lg font-light text-black/50">
+                        <p className="mil-up text-center lg:text-left mt-8 text-lg font-light text-black/50">
                             Our team thrives on synergy, creating an environment of boundless creativity. By harnessing our collective expertise, we
                             produce extraordinary results that consistently surpass expectations and propel your business forward.
                         </p>
@@ -71,7 +71,15 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="max-w-[450px] max-h-[700px] overflow-hidden">
-                        <Image height={700} width={450} src="/images/StartUp.webp" alt="startup" className="mil-scale mil-up" data-value1="1" data-value2="1.2" />
+                        <Image
+                            height={700}
+                            width={450}
+                            src="/images/StartUp.webp"
+                            alt="startup"
+                            className="mil-scale mil-up"
+                            data-value1="1"
+                            data-value2="1.2"
+                        />
                     </div>
                 </div>
             </section>
@@ -154,22 +162,71 @@ export default function Home() {
             </section>
 
             <section className="bg-white min-h-screen 2xl:min-h-fit">
-                <div className="container py-18 md:py-28">
-                    <div className="mil-up">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-center font-medium">
-                            <span className="font-thin">Meet Our </span>Team
-                        </h1>
-                        <p className="px-12 mil-up mt-12 text-lg font-light text-black/50">
-                            Our team is a powerhouse of creativity and enthusiasm, always eager to take on new challenges. We thrive on pushing
-                            boundaries because it drives us to perfection.
-                        </p>
-                        <p className="px-12 mil-up mt-4 text-lg font-light text-black/50">
-                            With over 7 years of collective experience, our developers bring a wealth of expertise to the table. Whether it's tackling
-                            complex projects or finding innovative solutions, we're dedicated to delivering excellence. Join us as we embark on a
-                            journey of innovation and success together.
-                        </p>
+                <div className="container py-16 md:py-24">
+                    <h1 className="mil-up text-center text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium">
+                        <span className="font-thin">Our Proven</span> Process
+                        <br />
+                        <span className="font-thin">To Build Great</span> Products
+                    </h1>
+                    <p className="mil-up text-black/50 text-center mt-8 text-lg md:text-xl font-light">
+                        From idea to execution, we follow a refined process that ensures quality, clarity, and on-time delivery.
+                    </p>
+                    <div className="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 w-full cursor-default">
+                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
+                            <div>
+                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
+                                    <span>1</span>
+                                </p>
+                                <h2 className="mt-6 text-3xl font-medium">DISCOVER</h2>
+                                <p className="mt-4 text-xl text-black/70">
+                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/images/Discover.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                            </div>
+                        </div>
+                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
+                            <div>
+                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
+                                    <span>2</span>
+                                </p>
+                                <h2 className="mt-6 text-3xl font-medium">DESIGN</h2>
+                                <p className="mt-4 text-xl text-black/70">Our UI/UX experts craft intuitive interfaces and engaging experiences.</p>
+                            </div>
+                            <div>
+                                <img src="/images/Design.svg" alt="design" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                            </div>
+                        </div>
+                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
+                            <div>
+                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
+                                    <span>3</span>
+                                </p>
+                                <h2 className="mt-6 text-3xl font-medium">DEVELOP</h2>
+                                <p className="mt-4 text-xl text-black/70">
+                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/images/Develop.svg" alt="develop" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                            </div>
+                        </div>
+                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
+                            <div>
+                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
+                                    <span>4</span>
+                                </p>
+                                <h2 className="mt-6 text-3xl font-medium">DELIVER</h2>
+                                <p className="mt-4 text-xl text-black/70">
+                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/images/Delivery.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                            </div>
+                        </div>
                     </div>
-                    <TeamMember />
                 </div>
             </section>
 
@@ -201,7 +258,7 @@ export default function Home() {
                         </h2>
                     </div>
                     <div className="flex flex-col lg:flex-row gap-8">
-                        <div className="flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col gap-8">
+                        <div className="flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col lg:justify-start gap-8">
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
                                     src="/images/Sapphire1.png"
@@ -229,7 +286,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:mt-16 flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col gap-8">
+                        <div className="lg:mt-12 flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col lg:justify-start gap-8">
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
                                     src="/images/DairyDon1.png"
@@ -261,7 +318,27 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="py-16 sm:py-24">
+            <section className="bg-white min-h-screen 2xl:min-h-fit">
+                <div className="container py-18 md:py-28">
+                    <div className="mil-up">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-center font-medium">
+                            <span className="font-thin">Meet Our </span>Team
+                        </h1>
+                        <p className="px-12 mil-up mt-12 text-lg font-light text-black/50">
+                            Our team is a powerhouse of creativity and enthusiasm, always eager to take on new challenges. We thrive on pushing
+                            boundaries because it drives us to perfection.
+                        </p>
+                        <p className="px-12 mil-up mt-4 text-lg font-light text-black/50">
+                            With over 7 years of collective experience, our developers bring a wealth of expertise to the table. Whether it's tackling
+                            complex projects or finding innovative solutions, we're dedicated to delivering excellence. Join us as we embark on a
+                            journey of innovation and success together.
+                        </p>
+                    </div>
+                    <TeamMember />
+                </div>
+            </section>
+
+            <section className="pb-16 sm:pb-24">
                 <InfiniteLogoScroller logos={logos} />
             </section>
         </>

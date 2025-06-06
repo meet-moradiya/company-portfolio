@@ -9,37 +9,37 @@ const teamMembers = [
         name: "Meet Moradiya",
         role: "Full-Stack Developer",
         experience: "3 Years",
-        image: "./members/MeetMoradiya.jpeg",
+        image: "/members/MeetMoradiya.jpeg",
     },
     {
         name: "Pratik Talaviya",
         role: "AI Engineer",
         experience: "2.5 Years",
-        image: "./members/PratikTalaviya.jpeg",
+        image: "/members/PratikTalaviya.jpeg",
     },
     {
         name: "Vaidik Jetani",
         role: "DevOps Engineer",
         experience: "3.5 Years",
-        image: "./members/VaidikJetani.jpeg",
+        image: "/members/VaidikJetani.jpeg",
     },
     {
         name: "Kenil Kanani",
         role: "Back-end Developer",
         experience: "2 Years",
-        image: "./members/KenilKanani.jpg",
+        image: "/members/KenilKanani.jpg",
     },
     {
         name: "Hardik Nasit",
         role: "Mobile App Developer",
         experience: "2.5 Year",
-        image: "./members/HardikNasit.webp",
+        image: "/members/HardikNasit.webp",
     },
     {
         name: "Khushal Dhola",
         role: "Full-Stack Developer",
         experience: "2 Years",
-        image: "./members/KhushalDhola.webp",
+        image: "/members/KhushalDhola.webp",
     },
 ];
 
