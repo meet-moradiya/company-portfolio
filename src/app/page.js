@@ -59,11 +59,11 @@ export default function Home() {
                             Our team thrives on synergy, creating an environment of boundless creativity. By harnessing our collective expertise, we
                             produce extraordinary results that consistently surpass expectations and propel your business forward.
                         </p>
-                        <div className="mil-up">
+                        <div className="mil-up mt-12 mx-auto lg:mx-0 md:mt-18 w-fit">
                             <Link href={"/"}>
                                 <CustomLinkButton
                                     text="our team"
-                                    containerClassName="mt-12 mx-auto lg:mx-0 md:mt-18 w-fit bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
+                                    containerClassName="bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
                                     textClassName="hover:!text-black text-white"
                                     iconWrapperClassName="!bg-white !text-black"
                                 />
@@ -94,11 +94,11 @@ export default function Home() {
                     <p className="mil-up text-white/50 text-center mt-8 text-lg md:text-xl font-light">
                         Pioneering IT solutions, unmatched excellence. Elevate your digital presence with our cutting-edge technology and expertise.
                     </p>
-                    <div className="mil-up">
+                    <div className="mil-up mx-auto w-fit mt-8">
                         <Link href={"/services"}>
                             <CustomLinkButton
                                 text="what we do"
-                                containerClassName="mx-auto w-fit mt-8 bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
+                                containerClassName="bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
                                 textClassName="hover:text-white"
                                 iconWrapperClassName="!bg-white !text-black"
                             />
@@ -183,7 +183,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div>
-                                <img src="/images/Discover.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                                <img src="/images/Discover.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
                             </div>
                         </div>
                         <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
@@ -195,7 +195,7 @@ export default function Home() {
                                 <p className="mt-4 text-xl text-black/70">Our UI/UX experts craft intuitive interfaces and engaging experiences.</p>
                             </div>
                             <div>
-                                <img src="/images/Design.svg" alt="design" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                                <img src="/images/Design.svg" alt="design" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
                             </div>
                         </div>
                         <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
@@ -209,7 +209,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div>
-                                <img src="/images/Develop.svg" alt="develop" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                                <img src="/images/Develop.svg" alt="develop" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
                             </div>
                         </div>
                         <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
@@ -223,7 +223,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div>
-                                <img src="/images/Delivery.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out"/>
+                                <img src="/images/Delivery.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
                             </div>
                         </div>
                     </div>
@@ -242,14 +242,16 @@ export default function Home() {
                                 connect with their customers, and stay ahead in a fast-moving digital world. Whether it's a small feature or a
                                 complete system, we approach every project with the same level of dedication and care.
                             </p>
-                            <Link href={"/services"}>
-                                <CustomLinkButton
-                                    text="view more"
-                                    containerClassName="mil-up mt-16 mx-auto lg:mx-0 w-fit bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
-                                    textClassName="hover:text-white"
-                                    iconWrapperClassName="!bg-white !text-black"
-                                />
-                            </Link>
+                            <div className="mil-up mt-16 mx-auto lg:mx-0 w-fit">
+                                <Link href={"/services"}>
+                                    <CustomLinkButton
+                                        text="view more"
+                                        containerClassName="bg-violet-500 pr-4 pl-8 py-3 rounded-full hover:bg-purple-500 duration-500 ease-in-out"
+                                        textClassName="hover:text-white"
+                                        iconWrapperClassName="!bg-white !text-black"
+                                    />
+                                </Link>
+                            </div>
                         </div>
                         <h2 className="mil-up text-white text-center lg:text-left mt-12 lg:mt-0 font-thin text-3xl mb-0">
                             We <span className="font-medium">delivering</span>

@@ -1,17 +1,11 @@
 import Image from "next/image";
-import { DateFormat } from "@/lib/utility";
+import { DateFormat } from "@/utils/utility";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
-async function getBlog(slug) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/blog/${slug}`, {
-        cache: "no-store",
-    });
-    return res.json();
-}
+import { getBlogBySlug } from "@/lib/blogService";
 
 export async function generateMetadata(context) {
-    const params = await context.params;
-    const blog = await getBlog(params.slug);
+    const { slug } = await context.params;
+    const blog = await getBlogBySlug(slug);
 
     if (!blog) {
         return {
@@ -33,8 +27,8 @@ export async function generateMetadata(context) {
 }
 
 export default async function BlogDetailPage(context) {
-    const params = await context.params;
-    const blog = await getBlog(params.slug);
+    const { slug } = await context.params;
+    const blog = await getBlogBySlug(slug);
 
     if (!blog)
         return (

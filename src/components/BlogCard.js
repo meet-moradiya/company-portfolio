@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { DateFormat } from "@/lib/utility";
+import { DateFormat } from "@/utils/utility";
 import CustomLinkButton from "./CustomLinkButton";
 
 export default function BlogCard({ blog }) {

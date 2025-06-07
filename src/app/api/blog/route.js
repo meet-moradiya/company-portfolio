@@ -1,16 +1,13 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/db";
-import Blog from "@/models/Blog";
+import { getAllBlogs, createBlog } from "@/lib/blogService";
 
 export async function POST(req) {
-    await connectDB();
     const body = await req.json();
-    const blog = await Blog.create(body);
+    const blog = await createBlog(body);
     return NextResponse.json(blog, { status: 201 });
 }
 
 export async function GET() {
-    await connectDB();
-    const blogs = await Blog.find().sort({ createdAt: -1 });
+    const blogs = await getAllBlogs();
     return NextResponse.json(blogs);
 }
