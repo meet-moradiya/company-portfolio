@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 
 const teamMembers = [
     {
@@ -45,6 +45,14 @@ const teamMembers = [
 
 export default function TeamMember() {
     const [selectedMember, setSelectedMember] = useState(teamMembers[0]);
+    const contentRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(contentRef.current, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" });
+        }, contentRef);
+        return () => ctx.revert();
+    }, [selectedMember]);
 
     return (
         <>
@@ -73,20 +81,11 @@ export default function TeamMember() {
             </div>
 
             <div className="mt-12 text-center p-4 relative min-h-[200px]">
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={selectedMember.name}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="absolute left-0 right-0"
-                    >
-                        <p className="mil-up text-4xl font-medium">{selectedMember.name}</p>
-                        <p className="mil-up text-5xl text-black/70 mt-8">{selectedMember.role}</p>
-                        <p className="mil-up text-2xl text-black/50 mt-4">{selectedMember.experience}</p>
-                    </motion.div>
-                </AnimatePresence>
+                <div ref={contentRef} className="absolute left-0 right-0">
+                    <p className="mil-up text-4xl font-medium">{selectedMember.name}</p>
+                    <p className="mil-up text-5xl text-black/70 mt-8">{selectedMember.role}</p>
+                    <p className="mil-up text-2xl text-black/50 mt-4">{selectedMember.experience}</p>
+                </div>
             </div>
         </>
     );

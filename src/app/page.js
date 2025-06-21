@@ -3,6 +3,7 @@ import CustomLinkButton from "@/components/CustomLinkButton";
 import TeamMember from "@/components/TeamMember";
 import InfiniteLogoScroller from "@/components/InfiniteLogoScroller";
 import Image from "next/image";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 export default function Home() {
     const logos = [
@@ -17,6 +18,7 @@ export default function Home() {
 
     return (
         <>
+            <ScrollAnimations />
             <section className="py-34 bg-black text-white h-screen flex flex-col justify-center items-center">
                 <div className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium">
                     <span>Crafting</span>
@@ -263,7 +265,7 @@ export default function Home() {
                         <div className="flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col lg:justify-start gap-8">
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
-                                    src="/images/Sapphire1.png"
+                                    src="/images/Sapphire1.jpg"
                                     alt="Sapphire"
                                     className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
                                 />
@@ -276,7 +278,7 @@ export default function Home() {
                             </div>
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
-                                    src="/images/LiveStreamCoffee1.png"
+                                    src="/images/LiveStreamCoffee1.jpg"
                                     alt="LiveStreamCoffee"
                                     className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
                                 />
@@ -291,7 +293,7 @@ export default function Home() {
                         <div className="lg:mt-12 flex items-center flex-col sm:flex-row sm:justify-around lg:flex-col lg:justify-start gap-8">
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
-                                    src="/images/DairyDon1.png"
+                                    src="/images/DairyDon1.jpg"
                                     alt="DairyDon"
                                     className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
                                 />
@@ -304,7 +306,7 @@ export default function Home() {
                             </div>
                             <div className="mil-up group relative h-[350px] w-[270px] sm:h-[400px] sm:w-[330px] md:h-[500px] md:w-[400px] lg:h-[350px] lg:w-[270px] overflow-hidden border border-white">
                                 <img
-                                    src="/images/ChhotiSiMuskan1.png"
+                                    src="/images/ChhotiSiMuskan1.jpg"
                                     alt="ChhotiSiMuskan"
                                     className="object-cover origin-top duration-400 ease-out scale-102 group-hover:scale-100"
                                 />

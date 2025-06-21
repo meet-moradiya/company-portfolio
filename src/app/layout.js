@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import CustomCursor from "@/components/CustomCursor";
-import ScrollTriggerInit from "@/components/ScrollTriggerInit";
 import CurrentPage from "@/components/CurrentPage";
 import BackToTop from "@/components/BackToTop";
 import CustomScrollbar from "@/components/CustomScrollbar";
@@ -21,18 +20,17 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                    <CustomCursor />
-                    <CustomScrollbar />
-                    <ScrollTriggerInit />
-                    <div id="smooth-wrapper">
-                        <CurrentPage />
-                        <BackToTop />
-                        <Navbar />
-                        <div id="smooth-content">
-                                {children}
-                                <Footer />
-                        </div>
+                <CustomCursor />
+                <CustomScrollbar />
+                <div id="smooth-wrapper">
+                    <CurrentPage />
+                    <BackToTop />
+                    <Navbar />
+                    <div id="smooth-content">
+                        {children}
+                        <Footer />
                     </div>
+                </div>
             </body>
         </html>
     );

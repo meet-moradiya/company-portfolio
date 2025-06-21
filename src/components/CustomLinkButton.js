@@ -1,4 +1,6 @@
-export default function CustomLinkButton({ href, text = "default text", containerClassName = "", textClassName = "", iconWrapperClassName = "" }) {
+"use client";
+
+export default function CustomLinkButton({ text = "default text", containerClassName = "", textClassName = "", iconWrapperClassName = "" }) {
 
     return (
         <div className={`flex items-center gap-4 group cursor-pointer ${containerClassName}`}>

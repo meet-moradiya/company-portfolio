@@ -2,6 +2,7 @@ import Image from "next/image";
 import { DateFormat } from "@/utils/utility";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getBlogBySlug } from "@/lib/blogService";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 export async function generateMetadata(context) {
     const { slug } = await context.params;
@@ -46,6 +47,7 @@ export default async function BlogDetailPage(context) {
 
     return (
         <div className="bg-white py-34">
+            <ScrollAnimations />
             <div className="container flex flex-col justify-center overflow-hidden">
                 <div className="flex justify-center items-center">
                     <Breadcrumbs />
