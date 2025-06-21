@@ -163,70 +163,39 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white min-h-screen 2xl:min-h-fit">
+            <section className="bg-white min-h-fit">
                 <div className="container py-16 md:py-24">
                     <h1 className="mil-up text-center text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium">
-                        <span className="font-thin">Our Proven</span> Process
-                        <br />
-                        <span className="font-thin">To Build Great</span> Products
+                        <span className="font-thin">Core</span> Values
                     </h1>
                     <p className="mil-up text-black/50 text-center mt-8 text-lg md:text-xl font-light">
-                        From idea to execution, we follow a refined process that ensures quality, clarity, and on-time delivery.
+                        We believe great technology starts with strong values. That’s why we lead with Integrity, deliver with Quality, build lasting
+                        Relationships, and operate with complete Transparency.{" "}
                     </p>
-                    <div className="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 w-full cursor-default">
-                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
-                            <div>
-                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
-                                    <span>1</span>
-                                </p>
-                                <h2 className="mt-6 text-3xl font-medium">DISCOVER</h2>
-                                <p className="mt-4 text-xl text-black/70">
-                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
-                                </p>
+                    <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 sm:gap-12 xl:grid-cols-4 xl:gap-0 ">
+                        <div className="flex flex-col-reverse sm:flex-col items-center justify-center group">
+                            <div className="mil-up relative h-72 w-72">
+                                <Image src={"/images/Integrity.svg"} fill className="object-contain" alt="integrity" />
                             </div>
-                            <div>
-                                <img src="/images/Discover.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
-                            </div>
+                            <span className="mil-up text-2xl font-bolder">Integrity</span>
                         </div>
-                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
-                            <div>
-                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
-                                    <span>2</span>
-                                </p>
-                                <h2 className="mt-6 text-3xl font-medium">DESIGN</h2>
-                                <p className="mt-4 text-xl text-black/70">Our UI/UX experts craft intuitive interfaces and engaging experiences.</p>
+                        <div className="flex flex-col-reverse sm:flex-col items-center justify-center group">
+                            <div className="mil-up relative h-72 w-72">
+                                <Image src={"/images/Quality.svg"} fill className="object-contain" alt="quality" />
                             </div>
-                            <div>
-                                <img src="/images/Design.svg" alt="design" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
-                            </div>
+                            <span className="mil-up text-2xl font-bolder">Quality</span>
                         </div>
-                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
-                            <div>
-                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
-                                    <span>3</span>
-                                </p>
-                                <h2 className="mt-6 text-3xl font-medium">DEVELOP</h2>
-                                <p className="mt-4 text-xl text-black/70">
-                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
-                                </p>
+                        <div className="flex flex-col-reverse sm:flex-col items-center justify-center group">
+                            <div className="mil-up relative h-72 w-72">
+                                <Image src={"/images/Relationship.svg"} fill className="object-contain" alt="relationship" />
                             </div>
-                            <div>
-                                <img src="/images/Develop.svg" alt="develop" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
-                            </div>
+                            <span className="mil-up text-2xl font-bolder">Relationship</span>
                         </div>
-                        <div className="mil-up border flex-1 flex flex-col justify-between p-4 group hover:border-violet-500 hover:shadow-2xl duration-500 ease-in-out">
-                            <div>
-                                <p className="text-xl text-white font-medium bg-violet-500 group-hover:scale-95 duration-400 ease-in-out h-10 w-10 flex justify-center items-center rounded-full">
-                                    <span>4</span>
-                                </p>
-                                <h2 className="mt-6 text-3xl font-medium">DELIVER</h2>
-                                <p className="mt-4 text-xl text-black/70">
-                                    We begin by understanding your business goals, audience, and market needs to aline our strategy.
-                                </p>
+                        <div className="flex flex-col-reverse sm:flex-col items-center justify-center group">
+                            <div className="mil-up relative h-72 w-72">
+                                <Image src={"/images/Transparency.svg"} fill className="object-contain" alt="transparency" />
                             </div>
-                            <div>
-                                <img src="/images/Delivery.svg" alt="discover" className="max-h-60 group-hover:scale-95 duration-400 ease-in-out" />
-                            </div>
+                            <span className="mil-up text-2xl font-bolder">Transparency</span>
                         </div>
                     </div>
                 </div>
